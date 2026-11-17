@@ -119,13 +119,24 @@ window.RUBRIC = {
         },
         {
           q: "Do you have pre-built Ohio state test (OAA/OGT/AIR) practice items for grades 3-12?",
-          answer: "There are existing items in the library. Districts can also build a Luna configuration for Ohio's State Test, so teachers generate practice items that follow the test's item types, style and DOK levels, tagged to Ohio standards. Teachers pick the configuration, name a standard, and review each item before it's added.",
-          media: {
-            src: "assets/video/luna-ost-config.mp4",
-            poster: "assets/video/luna-ost-config.jpg",
-            alt: "A teacher picks the Ohio State Test Practice: Grade 8 Math configuration in Luna, asks for practice items for Ohio standard 8.EE.7.b, and reviews six items before accepting them: two multiple choice, a select-two, a numeric entry, a solutions table and a two-part question",
-            caption: "Picking the district’s Ohio State Test configuration and generating OST-style items for 8.EE.7.b (wait sped up)",
-          },
+          answer: "There are existing items in the library. Districts can also build a Luna configuration for Ohio's State Test, so teachers generate practice items that follow the test's item types, style and DOK levels, tagged to Ohio standards. Teachers pick the configuration, name a standard, and review each item before it's added.\n\nHere is an example of what we could work towards for you. In addition, we think that there may be some things that would be equally valuable for you such as coordinate planes, bar graphs and histograms, absolute value graphs and fraction models, and state-test mirrored math keyboards.",
+          media: [
+            {
+              src: "assets/video/luna-ost-config.mp4",
+              poster: "assets/video/luna-ost-config.jpg",
+              label: "Ohio State Test items with Luna",
+              alt: "A teacher picks the Ohio State Test Practice: Grade 8 Math configuration in Luna, asks for practice items for Ohio standard 8.EE.7.b, and reviews six items before accepting them: two multiple choice, a select-two, a numeric entry, a solutions table and a two-part question",
+              caption: "Picking the district’s Ohio State Test configuration and generating OST-style items for 8.EE.7.b (wait sped up)",
+            },
+            {
+              src: "assets/video/ohio-mirror-side-by-side.mp4",
+              poster: "assets/video/ohio-mirror-side-by-side.jpg",
+              label: "Mirroring the Ohio State Test",
+              wide: true,
+              alt: "Side by side: a teacher assigns Ohio State Test Practice: Grade 4 Reading with Mirror Ohio State Test turned on, and the student's practice switches from the standard Formative layout to one that looks like the Ohio State Test, with its question bar, tools and passage tabs",
+              caption: "Example: practice that looks like the Ohio State Test, something we could work towards",
+            },
+          ],
         },
         {
           q: "Are items tagged by standard, Bloom's level, and DOK level?",
