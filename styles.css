@@ -640,7 +640,7 @@ a {
 /* Very wide clips (side-by-side) sit on top at full width, text below */
 .focus-body.has-media.is-wide {
   grid-template-columns: minmax(0, 1fr);
-  grid-template-rows: auto auto;
+  grid-template-rows: max-content auto;
   overflow-y: auto;
 }
 

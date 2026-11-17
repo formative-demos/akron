@@ -53,12 +53,22 @@ window.RUBRIC = {
         {
           q: "Visual appeal and intuitiveness of student facing interface?",
           answer: "Students see a clean, uncluttered screen with a question navigator, hints when the teacher allows them, and built-in tools such as text-to-speech and a math keypad. It runs in the browser on Chromebooks, iPads and laptops, so there is nothing to install for everyday assessments.",
-          media: {
-            src: "assets/video/student-takes-assessment.mp4",
-            poster: "assets/video/student-takes-assessment.jpg",
-            alt: "A student works through a five-question exit ticket: multiple choice, sorting items into categories by dragging, and typed answers, then submits and sees their score",
-            caption: "A student taking an assessment",
-          },
+          media: [
+            {
+              src: "assets/video/student-reading.mp4",
+              poster: "assets/video/student-reading.jpg",
+              label: "Paired passages and hot text",
+              alt: "A student opens a Grade 8 benchmark, reads two paired passages using the passage tabs, and selects the best sentence in a hot text question",
+              caption: "Reading: paired passages and a hot text question",
+            },
+            {
+              src: "assets/video/student-math-science.mp4",
+              poster: "assets/video/student-math-science.jpg",
+              label: "Calculator, drag and drop, GIF",
+              alt: "The student opens the graphing calculator, checks 5 squared plus 12 squared equals 13 squared, graphs a half circle through the point (5, 12), answers a multi-part question, drags steps into order, labels Earth's layers by dragging, and answers a question with an animated GIF",
+              caption: "Math and science: graphing calculator, multi-part, resequence, drag and drop, and a GIF in the question",
+            },
+          ],
         },
         {
           q: "Ease of assessment creation",
@@ -93,13 +103,13 @@ window.RUBRIC = {
           media: {
             src: "assets/video/ohio-standards.mp4",
             poster: "assets/video/ohio-standards.jpg",
-            alt: "A teacher adds the Ohio Science (2018–) grade 8 standards set, searches for force, and tags the question with 8.PS.2",
-            caption: "Adding Ohio’s grade 8 science standards and tagging a question",
+            alt: "A teacher opens a question's Standards field, adds Ohio's Science (2018-) Grade 8 standards set, searches for force and tags the question with 8.PS.2",
+            caption: "Adding Ohio’s grade 8 science standards and tagging a question with 8.PS.2",
           },
         },
         {
           q: "Can we migrate our existing assessments into the platform",
-          answer: "Yes, you will have an assessment specialist that can support in the migration of current assessments into the platform, so there will be less manual work for your team.",
+          answer: "Yes. Formative fully supports QTI imports, as long as your current assessment vendor can provide those files. You can also import from Google Forms, or upload a PDF or Word document and Formative turns it into editable questions. If none of those work for you, an assessment specialist will help migrate your current assessments into the platform, so there is less manual work for your team.",
           media: {
             src: "assets/video/parse-pdf.mp4",
             poster: "assets/video/parse-pdf.jpg",
@@ -109,11 +119,17 @@ window.RUBRIC = {
         },
         {
           q: "Do you have pre-built Ohio state test (OAA/OGT/AIR) practice items for grades 3-12?",
-          answer: "There are existing items in the library. It is also possible to create configurations with Luna to directly support assessment items aligned to the state test.",
+          answer: "There are existing items in the library. Districts can also build a Luna configuration for Ohio's State Test, so teachers generate practice items that follow the test's item types, style and DOK levels, tagged to Ohio standards. Teachers pick the configuration, name a standard, and review each item before it's added.",
+          media: {
+            src: "assets/video/luna-ost-config.mp4",
+            poster: "assets/video/luna-ost-config.jpg",
+            alt: "A teacher picks the Ohio State Test Practice: Grade 8 Math configuration in Luna, asks for practice items for Ohio standard 8.EE.7.b, and reviews six items before accepting them: two multiple choice, a select-two, a numeric entry, a solutions table and a two-part question",
+            caption: "Picking the district’s Ohio State Test configuration and generating OST-style items for 8.EE.7.b (wait sped up)",
+          },
         },
         {
           q: "Are items tagged by standard, Bloom's level, and DOK level?",
-          answer: "Yes, by standard and DOK level. Bloom's Taxonomy levels could be added as well.",
+          answer: "Yes, every item in our Item Bank is tagged by standard and DOK level. Bloom's Taxonomy levels could be added as well.",
           media: {
             src: "assets/video/item-bank-add.mp4",
             poster: "assets/video/item-bank-add.jpg",
@@ -123,13 +139,37 @@ window.RUBRIC = {
         },
         {
           q: "What item types are supported? (MC, TEI, short answer, extended response, drag-and-drop, etc.)",
-          answer: "There are a wide variety of tech enhanced question types to support all content areas across K-12. Some of these include multiple choice, multiple select, short answer, free response, drag and drop, numeric, graphing, in-line choice, match table grid, categorize, etc.",
-          media: {
-            src: "assets/video/item-types.mp4",
-            poster: "assets/video/item-types.jpg",
-            alt: "The Add item menu listing content types and question types such as categorize, drag and drop, graphing, hot spot, match table grid and video response",
-            caption: "Every content and question type in the add menu",
-          },
+          answer: "Formative has more than 20 question types for every subject, K-12. Many have built-in variations, so one question type covers what other platforms count as several.\n• Multiple choice, multiple selection and true or false\n• Short answer and free response\n• Numeric, with a math keypad for expressions and equations\n• Fill in the blank: text or numeric blanks, in a sentence or inside a table\n• Dropdown (inline choice)\n• Drag and drop: drag text or images onto a picture or into a sentence\n• Categorize, match table grid and resequence\n• Hot text and hot spot\n• Graphing and number line\n• Drawing, plus audio, video and file responses\n• Multi-part: combine any of these into one item, for example a numeric answer followed by a free response where the student explains their thinking\nYou can also add text, images, video, audio, embeds and paired passages. Objective question types score automatically.",
+          media: [
+            {
+              src: "assets/video/item-types.mp4",
+              poster: "assets/video/item-types.jpg",
+              label: "All question types",
+              alt: "The Add item menu listing content types and question types such as categorize, drag and drop, graphing, hot spot, match table grid and video response",
+              caption: "Every content and question type in the add menu",
+            },
+            {
+              src: "assets/video/multi-part.mp4",
+              poster: "assets/video/multi-part.jpg",
+              label: "Multi-part",
+              alt: "A teacher adds a multi-part question: a numeric part asking for the total gym cost after 6 months with the answer 115, then a free response part asking students to explain their thinking",
+              caption: "A multi-part question: a numeric answer, then a free response where students explain their thinking",
+            },
+            {
+              src: "assets/video/fitb-table.mp4",
+              poster: "assets/video/fitb-table.jpg",
+              label: "Fill in the blank table",
+              alt: "A teacher inserts a table into a fill in the blank question, fills in hours and miles, and turns two cells into blanks with answers 180 and 240",
+              caption: "Fill in the blank inside a table",
+            },
+            {
+              src: "assets/video/drag-drop-image.mp4",
+              poster: "assets/video/drag-drop-image.jpg",
+              label: "Drag and drop: text or image",
+              alt: "A teacher starts a drag and drop question, points out the choice between drop areas in text or on an image, uploads a diagram of Earth's layers, places four drop areas, and adds the labels",
+              caption: "Drag and drop works with drop areas in text or on an image",
+            },
+          ],
         },
         {
           q: "Are objective items (MC, TEI) auto-scored in real time?",
@@ -138,7 +178,7 @@ window.RUBRIC = {
             src: "assets/video/live-side-by-side.mp4",
             poster: "assets/video/live-side-by-side.jpg",
             alt: "Side by side: on the right a student answers five questions and submits; on the left the teacher’s Responses grid marks each answer correct or incorrect the moment it is submitted",
-            caption: "Live: the teacher’s Responses page (left) fills in as a student answers (right)",
+            caption: "Live: the teacher’s Responses page (left) fills in as Tina Orozco answers (right). Her row is outlined in orange.",
             wide: true,
           },
         },
@@ -146,15 +186,21 @@ window.RUBRIC = {
           q: "Can teachers hand-score constructed response items within the platform?",
           answer: "Yes, teachers can hand score open-ended items, as well as rubric aligned items. Teachers can also utilize Luna, the AI, to score against a rubric (nothing is shared/sent to students without a teacher sending it).",
           media: {
-            src: "assets/video/hand-score.mp4",
-            poster: "assets/video/hand-score.jpg",
-            alt: "A teacher opens a student’s incorrect written answer, sets the score, clicks Luna to draft feedback, and sends it",
-            caption: "Scoring a written answer and having Luna draft feedback",
+            src: "assets/video/hand-score-fr.mp4",
+            poster: "assets/video/hand-score-fr.jpg",
+            alt: "A teacher opens a free response question, scores three students' explanations of inertia out of 4 points and sends each a short comment, and the cards turn green or yellow",
+            caption: "Hand scoring free responses and sending feedback",
           },
         },
         {
           q: "Do you support analytic or holistic scoring rubrics for open-ended items?",
-          answer: "Yes. Teachers can attach a rubric to any free response question and score each criterion by clicking a level, and the points total automatically. A single-criterion rubric works for holistic scoring. Luna can also draft a rubric and suggest levels with a short explanation for each, and the teacher reviews and adjusts everything before scores are saved or returned to students.",
+          answer: "Yes. Teachers can attach a rubric to any free response question and score each criterion by clicking a level, and the points total automatically. Districts can use analytic rubrics, with a score for each criterion, or holistic rubrics, with one overall score, and save them to reuse across assessments. Luna can also draft a rubric and suggest levels with a short explanation for each, and the teacher reviews and adjusts everything before scores are saved or returned to students.",
+          media: {
+            src: "assets/video/rubrics.mp4",
+            poster: "assets/video/rubrics.jpg",
+            alt: "A teacher turns on Use rubric for two free response questions, attaches a saved analytic Claim, Evidence, Reasoning rubric to one and a holistic rubric to the other, and opens each to show the levels",
+            caption: "Attaching a saved analytic rubric, then a holistic one",
+          },
         },
         {
           q: "Can we set up item banks specific to grade and content areas?",
@@ -175,32 +221,32 @@ window.RUBRIC = {
       rows: [
         {
           q: "Can district staff author new items? Is there a review/approval workflow?",
-          answer: "Teachers can author items for their own classroom assessments, or can support creation of common assessments with district discretion.",
+          answer: "Yes. All staff can author their own items, for their own classroom assessments or for district common assessments. District leaders decide what is shared district-wide: common assessments are shared from the district, and teachers can assign them but not edit them.",
           media: {
-            src: "assets/video/common-assessment.mp4",
-            poster: "assets/video/common-assessment.jpg",
-            alt: "Common assessment settings: sharing with an org, an assessment window, scheduled release, content display, grading, lockdown browser and Luna permissions",
-            caption: "Common assessment settings a district controls",
+            src: "assets/video/common-assessment-settings.mp4",
+            poster: "assets/video/common-assessment-settings.jpg",
+            alt: "From the editor, a district leader opens Common assessment settings, shares the assessment with the district with assign-only access, reviews the delivery and security settings, and saves",
+            caption: "Common assessment settings, set from the editor",
           },
         },
         {
           q: "Can tests be shared across buildings, departments, and individual teachers?",
           answer: "Yes, collaboration is simple in Formative. Teachers can share with PLCs, and the district can send an assessment to a grade level, building, or entire district.",
           media: {
-            src: "assets/video/share.mp4",
-            poster: "assets/video/share.jpg",
-            alt: "The Share and permissions dialog: a share link, collaborators with Edit and assign rights, and adding Sunnydale School District with assign access",
-            caption: "Sharing an assessment with colleagues or a whole district",
+            src: "assets/video/share-editor.mp4",
+            poster: "assets/video/share-editor.jpg",
+            alt: "From the editor, a teacher opens Share, adds a colleague by typing her name, shares with the Eighth Grade Math PLC, and copies the assign link that gives a group of teachers access",
+            caption: "Sharing with a colleague, a PLC, and an assign link",
           },
         },
         {
           q: "Can the district lock/protect assessments so teachers cannot alter them?",
           answer: "Yes, any district common assessments can be locked down so that teachers cannot alter any questions. Formative also has Benchmark Mode, where a district can lock the assessment so teachers don't even see the questions.",
           media: {
-            src: "assets/video/common-assessment.mp4",
-            poster: "assets/video/common-assessment.jpg",
-            alt: "Common assessment settings a district sets for every teacher who uses the assessment",
-            caption: "Common assessment settings a district controls",
+            src: "assets/video/common-assessment-settings.mp4",
+            poster: "assets/video/common-assessment-settings.jpg",
+            alt: "From the editor, a district leader tags the assessment as a common assessment and shares it with assign-only access, so teachers can give it but not change it",
+            caption: "Teachers can assign a common assessment but not edit it",
           },
         },
         {
@@ -209,39 +255,49 @@ window.RUBRIC = {
           media: {
             src: "assets/video/randomize.mp4",
             poster: "assets/video/randomize.jpg",
-            alt: "Assign settings with Display questions in random order turned on",
-            caption: "Turning on random question order",
+            alt: "In the editor a question shows Randomize order for its answer choices, then Assign settings turns on Display questions in random order",
+            caption: "Shuffling answer choices and question order",
           },
         },
         {
           q: "Can we set time limits, section breaks, and student pacing controls?",
           answer: "Assessment settings are extremely flexible and can include time limits, open and close windows, feedback release, score release, testing accommodations, teacher paced (teacher controls the pace of the assessment), and student paced.",
           media: {
-            src: "assets/video/pacing-time.mp4",
-            poster: "assets/video/pacing-time.jpg",
-            alt: "Assign settings: choosing teacher-paced or student-paced, scheduling an open time, and turning on a time limit",
-            caption: "Pacing mode, open and close times, and a time limit",
+            src: "assets/video/pacing-sections.mp4",
+            poster: "assets/video/pacing-sections.jpg",
+            alt: "From the editor of a two-part unit test, the teacher opens Assign settings, picks student-paced, sets a 45 minute time limit, and turns on Restrict return to previous sections",
+            caption: "Sections, a 45 minute time limit, and no going back to earlier sections",
           },
         },
         {
           q: "Do you support online AND paper/pencil administration from the same platform?",
           answer: "Yes, Formative has print options to complete an assessment on paper in addition to the online version. There is also an add-on called Bubble Sheet, where students can complete the paper version like a scantron, and upload the results into Formative to access the data.",
           media: {
-            src: "assets/video/print.mp4",
-            poster: "assets/video/print.jpg",
-            alt: "Print options: print booklet, blank formative or with student responses, student summary slips and rubric pages",
-            caption: "Print options for a paper version",
+            src: "assets/video/print-booklet.mp4",
+            poster: "assets/video/print-booklet.jpg",
+            alt: "From the editor, Print options: a student booklet in two columns with Randomize on, then the printed booklet with the questions shuffled",
+            caption: "Printing a shuffled student booklet",
           },
         },
         {
           q: "What accommodation tools are built in? (text-to-speech, extended time, separate settings, zoom, etc.)",
           answer: "Accommodations available are text-to-speech, extended time, translations, answer choice reduction, color contrast, and masking. Additionally, teachers can turn on answer choice explanations, hints, and student notes for extra scaffolds and support.",
-          media: {
-            src: "assets/video/accommodations.mp4",
-            poster: "assets/video/accommodations.jpg",
-            alt: "Accommodations for one student: time limit extension, text-to-speech and answer choice reduction turned on",
-            caption: "Setting accommodations for one student",
-          },
+          media: [
+            {
+              src: "assets/video/accommodations-set.mp4",
+              poster: "assets/video/accommodations-set.jpg",
+              label: "Set defaults",
+              alt: "On the class roster the teacher opens a student and turns on text-to-speech, masking, color contrast and Spanish translation",
+              caption: "Setting a student's default accommodations on the Classes page",
+            },
+            {
+              src: "assets/video/accommodations-student.mp4",
+              poster: "assets/video/accommodations-student.jpg",
+              label: "Student view",
+              alt: "The student translates the test into Spanish, switches to high contrast, uses the line reader, and places a mask over part of the passage",
+              caption: "The student using translation, high contrast, the line reader and masking",
+            },
+          ],
         },
         {
           q: "Do you support English Learner accommodations including translated test directions?",
@@ -253,8 +309,8 @@ window.RUBRIC = {
           media: {
             src: "assets/video/assign-students.mp4",
             poster: "assets/video/assign-students.jpg",
-            alt: "Assign to individual students, selecting four students from the class",
-            caption: "Assigning to selected students",
+            alt: "From the editor, Assign settings schedules the test for Thursday from 8:00 AM to 3:00 PM and assigns it to four selected students",
+            caption: "Scheduling a window and assigning to selected students",
           },
         },
         {
@@ -270,13 +326,24 @@ window.RUBRIC = {
         {
           q: "Does your platform have any form of \"cheat detection\" including monitoring time spent on items and rapid correct responses? I.E. technology that would assist with detecting the use of a cell phone to complete an assessment.",
           answer: "Yes. Formative flags several signs of academic dishonesty for teachers to review:\n• Copy and paste alerts mark any answer that contains pasted text, even if the student later retyped it.\n• Overlap detection flags a student who is signed in on a second device or browser at the same time (for example, a phone), showing the device, browser, IP address and timestamps. Sessions can pause automatically until the teacher resumes them, and “Restrict to single device” blocks the second session entirely.\n• Timestamps and completion times on every response make it easy to spot a student who finished far faster than the rest of the class.\n• Teachers watch answers arrive live in the Responses grid.\nCombined with Respondus LockDown Browser, entry passwords and random question order, these tools cover both prevention and detection.",
-          media: {
-            src: "assets/video/live-side-by-side.mp4",
-            poster: "assets/video/live-side-by-side.jpg",
-            alt: "Side by side: on the right a student answers five questions and submits; on the left the teacher’s Responses grid marks each answer correct or incorrect the moment it is submitted",
-            caption: "Live: the teacher’s Responses page (left) fills in as a student answers (right)",
-            wide: true,
-          },
+          media: [
+            {
+              src: "assets/video/live-password-sbs.mp4",
+              poster: "assets/video/live-password-sbs.jpg",
+              label: "Fast and slow students",
+              alt: "Side by side: a student enters the assignment password and answers all five questions in about 30 seconds, while the teacher's Responses grid shows her finishing at 100% and two classmates still working slowly",
+              caption: "Live: Erin (right) enters the password and finishes fast, while Kaitlyn and Rodney work slowly in the teacher’s grid (left)",
+              wide: true,
+            },
+            {
+              src: "assets/video/second-device.mp4",
+              poster: "assets/video/second-device.jpg",
+              label: "Second device blocked",
+              alt: "Side by side: Kaitlyn opens the same assignment on a second device, enters the password and is blocked with 'This assignment is open in another window'. She requests control, a shield icon appears on her row in the teacher's grid, and the teacher reviews both sessions and grants control",
+              caption: "Restrict to single device: a second device is blocked until the teacher grants control (IP address hidden)",
+              wide: true,
+            },
+          ],
         },
       ],
     },
@@ -307,30 +374,69 @@ window.RUBRIC = {
         {
           q: "Can reports be viewed at student, classroom, building, and district levels for a district shared assessment?",
           answer: "Yes, there are both teacher and administrator permissions and all data is available in real time, so insights can be actionable. Teachers are able to see their own classrooms of data, as well as PLC data together if preferred. Building administrators can see their building's data, and district administrators can see all of the data in a singular view. From there, admin are able to filter to specific views and save that report for the future.",
-          media: {
-            src: "assets/video/admin-reports.mp4",
-            poster: "assets/video/admin-reports.jpg",
-            alt: "The Team tracker for a district-wide assessment: overall score, then Marshall School and Wilkerson School, then a teacher, a class and each student, then the same results by standard",
-            caption: "A district admin drilling from district to school, teacher, class and student",
-          },
+          media: [
+            {
+              src: "assets/video/district-responses.mp4",
+              poster: "assets/video/district-responses.jpg",
+              label: "District assessment",
+              alt: "The Responses page for the district's Spring Math Assessment: results by school (Marshall and Wilkerson), then by teacher, then one class and each student",
+              caption: "One district common assessment, broken out by school, teacher, class and student",
+            },
+            {
+              src: "assets/video/growth-report.mp4",
+              poster: "assets/video/growth-report.jpg",
+              label: "Growth",
+              alt: "Growth trends across the Fall, Winter and Spring math assessments, switching between District, Site and Teacher views, with performance levels and growth by standard",
+              caption: "Fall to Winter to Spring growth for the district, then by site and by teacher",
+            },
+            {
+              src: "assets/video/admin-reports.mp4",
+              poster: "assets/video/admin-reports.jpg",
+              label: "Team tracker",
+              alt: "The Team tracker for a district-wide assessment: overall score, then Marshall School and Wilkerson School, then a teacher, a class and each student, then the same results by standard",
+              caption: "A district admin drilling from district to school, teacher, class and student",
+            },
+          ],
         },
         {
           q: "Is there standard-by-standard reporting tied directly to Ohio Academic Standards?",
           answer: "Yes, for a teacher in the Responses tab, they can filter to a standards view to see how students are performing on each standard that's assessed. In the Insights tab, PLCs can look at their standards data together as well. For an administrator, in the Team Tracker view, they can also set the viewing to standards to see how the entire district, schools, grade levels, PLCs, etc. are performing on state standards.",
-          media: {
-            src: "assets/video/standards-report.mp4",
-            poster: "assets/video/standards-report.jpg",
-            alt: "The Responses grid regrouped by standard, then the Insights tab showing performance by standard",
-            caption: "Results grouped by standard, then the Insights standards summary",
-          },
+          media: [
+            {
+              src: "assets/video/responses-standards.mp4",
+              poster: "assets/video/responses-standards.jpg",
+              label: "Assessment by standard",
+              alt: "The Spring Math Assessment Responses page switched from questions to standards, showing every school, teacher and student by Ohio grade 8 standard (8.EE.7, 8.EE.8, 8.F.1, 8.F.4, 8.G.7, 8.SP.1)",
+              caption: "A district assessment’s results grouped by Ohio grade 8 standard, for every school, teacher and student",
+            },
+            {
+              src: "assets/video/tracker-standards.mp4",
+              poster: "assets/video/tracker-standards.jpg",
+              label: "Team tracker by standard",
+              alt: "The Team tracker in Standards view across the Fall, Winter and Spring assessments: each school's score by domain, then each teacher, then one teacher's class",
+              caption: "The Team tracker by standard across Fall, Winter and Spring, by school, teacher and class",
+            },
+          ],
         },
         {
           q: "Can teachers see their own class results without seeing other teachers' data?",
           answer: "Yes, teachers can see their own classroom data as soon as students begin taking an assessment. All data is real time. If a district would like teachers to see each other's data in PLCs, that can be allowed, but is at the discretion of the district.",
+          media: {
+            src: "assets/video/teacher-own-class.mp4",
+            poster: "assets/video/teacher-own-class.jpg",
+            alt: "A teacher opens the district's Spring Math Assessment and sees only their own class and students",
+            caption: "A teacher opening a district assessment sees only their own class",
+          },
         },
         {
           q: "Can building admin see both district and classroom teacher created assessment results?",
           answer: "The district sets the permissions and can allow building administrators to see it if they choose to allow it. Otherwise, building administrators will only see their building data.",
+          media: {
+            src: "assets/video/building-admin.mp4",
+            poster: "assets/video/building-admin.jpg",
+            alt: "A building administrator's Team tracker for the Fall, Winter and Spring assessments shows only the teachers in their school, then one teacher's class and students",
+            caption: "A building admin sees the teachers in their own building, down to each class and student",
+          },
         },
         {
           q: "Can district admin see building level results for teacher created assessments?",
