@@ -22,16 +22,15 @@ window.RUBRIC = {
       rows: [
         {
           q: "What is the cost to onboard?",
-          answer: "There is no additional cost to onboard.",
+          answer: "**All onboarding support is included in the subscription costs.** Upon partnership you will receive complimentary onboarding support from an **Assessment Services Partner** and **District Customer Success Manager** who will set up integrations, rostering and SSO. They will also schedule professional learning and ensure partnership goals are established and met.\n\nYour [Assessment Services Partner](https://go.newsela.com/rs/628-ZPE-510/images/BAFAssessmentServices.pdf) will work alongside your team to support assessment migration. They will review your district goals, curriculum maps, pacing guides, and assessment blueprints to develop a clear setup and transition strategy. To ensure a successful implementation and partnership, they will also provide deep data analysis, progress benchmarking, and insights.\n\nWe also offer Early Implementation, which provides 90 days of complimentary access so that your teams can begin working, setting up assessments and familiarizing themselves with the platform.",
         },
         {
           q: "What are the annual costs?",
-          answer: "Annual pricing is based on Akron’s student enrollment and the products included: the Formative School & District license, plus optional add-ons such as the Item Bank, Respondus LockDown Browser and Bubble Sheet. Your Formative account manager will share Akron’s exact annual quote.",
-          draft: true,
+          answer: "Annual costs are in our [pricing guide](https://docs.google.com/presentation/d/1chVFBT4GPa4WCuCKv1nFVyq3nkSNsVEJXOZKtsqp9Nc/edit?usp=sharing), which is also attached to our response.",
         },
         {
           q: "Are there any additional charges for full implementation (onboarding, training, rostering etc)?",
-          answer: "Professional learning is the only additional cost.",
+          answer: "The only additional implementation cost is for Professional Learning. Expert facilitators deliver engaging, hands-on learning experiences that help educators apply platform features and instructional strategies in their classrooms. Sessions can be tailored for teachers, instructional leaders, coaches, and administrators, with options ranging from live virtual workshops to in-person half-day or full-day sessions.\n\nProfessional Learning costs:\n• In-person session (full day): $4,200\n• Virtual live session (90 minutes): $750\n\nWe also offer Early Implementation, which provides 90 days of complimentary access so that your teams can begin working, setting up assessments and familiarizing themselves with the platform.",
         },
       ],
     },
@@ -212,7 +211,7 @@ window.RUBRIC = {
         },
         {
           q: "Can teachers hand-score constructed response items within the platform?",
-          answer: "Yes, teachers can hand score open-ended items, as well as rubric aligned items. Teachers can also utilize Luna, the AI, to score against a rubric (nothing is shared/sent to students without a teacher sending it).",
+          answer: "Yes, teachers can hand score open-ended items, as well as rubric aligned items. Teachers can also utilize Luna (AI) to score against a rubric (nothing is shared/sent to students without a teacher sending it).",
           media: {
             src: "assets/video/hand-score-fr.mp4",
             poster: "assets/video/hand-score-fr.jpg",
@@ -249,7 +248,7 @@ window.RUBRIC = {
       rows: [
         {
           q: "Can district staff author new items? Is there a review/approval workflow?",
-          answer: "Yes. All staff can author their own items, for their own classroom assessments or for district common assessments. District leaders decide what is shared district-wide: common assessments are shared from the district, and teachers can assign them but not edit them.",
+          answer: "All users can create their own items, but not all users can add those items to the district item bank. Adding an item to the district item bank is gated by a permission/role.",
           media: {
             src: "assets/video/common-assessment-settings.mp4",
             poster: "assets/video/common-assessment-settings.jpg",
@@ -329,7 +328,7 @@ window.RUBRIC = {
         },
         {
           q: "Do you support English Learner accommodations including translated test directions?",
-          answer: "Yes, an entire assessment, including directions, can be translated into a student’s native language. The Student Translator supports more than 30 languages, and text-to-speech reads the content aloud in the translated language.",
+          answer: "Yes, an entire assessment, including directions, can be translated into a student’s native language. The Student Translator supports more than 50 languages, and text-to-speech reads the content aloud in the translated language.",
         },
         {
           q: "Can we schedule and pre-assign tests to specific students or groups?",
@@ -386,7 +385,7 @@ window.RUBRIC = {
         },
         {
           q: "We use Schoolytics for our data analytic dashboard. Describe the integration process",
-          answer: "Formative has an integration to Schoolytics and would send the data nightly to be viewed in Schoolytics with whatever filtering the district would prefer.",
+          answer: "Schoolytics and Formative are both part of the Newsela companies. Formative has an integration to Schoolytics and would send the data nightly to be viewed in Schoolytics with whatever filtering your district would prefer.\n\nTogether, Formative and Schoolytics connect real-time classroom evidence of student understanding with the broader student picture, including academic, attendance, and behavioral data, so educators can move beyond isolated scores to more informed decisions. Formative helps teachers respond with timely, targeted instruction, while Schoolytics helps teams see patterns across students and data sources, supporting a stronger cycle of identifying needs, taking action, and understanding progress.\n\nHaving both products and partnering with one vendor can more deeply support your Data and Assessment strategy and ensure you are using data to inform instruction across Akron.",
         },
         {
           q: "Are there any known limitations on what data can be imported or exported?",
@@ -498,7 +497,7 @@ window.RUBRIC = {
         },
         {
           q: "Describe your Help Desk support?",
-          answer: "Akron will have a dedicated Customer Success Manager in addition to our support team. Staff can reach support by email at support@formative.com or by live chat (weekdays, 8am to 8pm ET), and the help center is available 24/7 with step-by-step articles.",
+          answer: "The Formative Support Desk is available 8am to 8pm ET, Monday through Friday.\n\nThe [Formative Help Center](https://help.formative.com/en/) is available 24/7 and is a comprehensive, step-by-step resource hub designed to make adopting and using Formative effortless. Whether you’re a teacher building your first interactive assignment, a student logging in, or a district admin managing licenses and standards tracking, it gives you instant guides, pedagogical tips, and direct support.\n\nUpon partnership you will also receive complimentary onboarding and partnership support from an [Assessment Services Partner](https://go.newsela.com/rs/628-ZPE-510/images/BAFAssessmentServices.pdf) and **District Customer Success Manager** who will set up integrations, rostering and SSO. They will also schedule professional learning and ensure partnership goals are established and met, and they are with you throughout your partnership to answer support questions.",
           media: {
             src: "assets/img/help-center.jpg",
             alt: "Formative help center home page with article categories",
@@ -552,7 +551,7 @@ window.RUBRIC = {
         },
         {
           q: "What are the limitations and philosophy for Artificial Intelligence?",
-          answer: "Luna is built to support teachers, not replace their judgment. Every question, hint, rubric or piece of feedback Luna drafts is shown to the teacher to review, edit or reject, and nothing reaches a student until a teacher sends it. Students do not use Luna.\nAI can make mistakes, which is why teacher review is built into every step. District leaders can set Luna configurations so generated content follows district frameworks, Ohio standards and state test formats, and Formative can turn AI features off for a district on request. Student data is protected under FERPA and COPPA and is never sold.",
+          answer: "AI in Formative is designed to enhance assessment workflows and amplify educator expertise. We believe technology in the classroom should never replace or put at risk the powerful teacher-student interactions necessary for meaningful learning. All Newsela products are purpose-built to optimize strong, research-based pedagogical practices that drive learning outcomes.\n\nWe always prioritize student safety and data security: student and teacher data is not retained, and cannot and will not be used to train models as per our DPA. All Newsela products comply with FERPA, COPPA and state student privacy laws.\n\nLike any generative technology, AI is not infallible. Because of these inherent limitations, Formative AI outputs are starting points: AI generates editable suggestions that require educator oversight, it does not make final grading decisions, students do not interact with a conversational chatbot, and adoption is never mandatory. All AI features can be disabled upon request.",
         },
       ],
     },
@@ -567,8 +566,7 @@ window.RUBRIC = {
         },
         {
           q: "Do you have any customers in Ohio? If so who?",
-          answer: "Yes. Teachers across Ohio use Formative, and we would be glad to connect Akron with Ohio district references.",
-          draft: true,
+          answer: "Yes. Ohio districts using Formative include:\n• Boardman Local School District\n• Jackson-Milton Local School District\n• Maple Heights City School District\n• Marysville Exempted Village School District\n• Princeton City School District\n• Riverdale Local School District\n• Dublin City Schools",
         },
         {
           q: "Can you share your financial stability?",

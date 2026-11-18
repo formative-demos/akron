@@ -18,7 +18,7 @@
   const videoObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
-        if (e.isIntersecting) e.target.play().catch(() => {});
+        if (e.isIntersecting) e.target.play().catch(() => (e.target.controls = true));
         else e.target.pause();
       });
     },
@@ -131,8 +131,29 @@
     if (!row.answer) return [el("p", "flag flag-missing", "Needs an answer before this goes to the district")];
     const nodes = [];
     if (row.draft) nodes.push(el("span", "flag flag-draft", "Draft wording"));
-    nodes.push(el("p", "answer", row.answer));
+    nodes.push(rich(el("p", "answer"), row.answer));
     return nodes;
+  }
+
+  // Supports **bold** and [text](https://...) links; everything else stays plain text
+  function rich(p, text) {
+    const re = /\*\*(.+?)\*\*|\[([^\]]+)\]\((https:\/\/[^)\s]+)\)/g;
+    let last = 0;
+    for (const m of text.matchAll(re)) {
+      p.append(text.slice(last, m.index));
+      if (m[1]) p.append(el("strong", null, m[1]));
+      else {
+        const a = el("a", null, m[2]);
+        a.href = m[3];
+        a.target = "_blank";
+        a.rel = "noopener";
+        a.addEventListener("click", (e) => e.stopPropagation());
+        p.append(a);
+      }
+      last = m.index + m[0].length;
+    }
+    p.append(text.slice(last));
+    return p;
   }
 
   function mediaList(row) {
@@ -163,7 +184,7 @@
       if (m.poster) v.poster = m.poster;
       v.setAttribute("aria-label", m.alt);
       v.src = m.src;
-      if (large) v.play().catch(() => {});
+      if (large) v.play().catch(() => (v.controls = true));
       else if (!reducedMotion) videoObserver.observe(v);
       return v;
     }
