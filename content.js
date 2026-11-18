@@ -6,6 +6,7 @@
 
 window.RUBRIC = {
   district: "Akron Public Schools",
+  districtLogo: "assets/akron-logo.png",
   title: "Formative's response to your assessment platform rubric",
   preparedOn: "November 2026",
   intro: "Every answer below follows your rubric's structure: the same areas, criteria and weights. Where it helps, we've added a screenshot or short clip so you can see the feature, not just read about it.",

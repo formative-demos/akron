@@ -11,6 +11,12 @@
 
   document.title = `Formative for ${R.district}`;
   $(".prepared").textContent = `Prepared for ${R.district}, ${R.preparedOn}`;
+  if (R.districtLogo) {
+    const dl = el("img", "district-logo");
+    dl.src = R.districtLogo;
+    dl.alt = R.district;
+    $(".prepared-for").append(dl);
+  }
   $("#title").textContent = R.title;
   $("#intro").textContent = R.intro;
 
