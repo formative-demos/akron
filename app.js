@@ -10,7 +10,6 @@
   const slug = (s) => s.toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/(^-|-$)/g, "");
 
   document.title = `Formative for ${R.district}`;
-  $(".prepared").textContent = `Prepared for ${R.district}, ${R.preparedOn}`;
   if (R.districtLogo) {
     const dl = el("img", "district-logo");
     dl.src = R.districtLogo;

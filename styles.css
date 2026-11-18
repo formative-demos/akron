@@ -76,43 +76,14 @@ a {
   width: auto;
 }
 
-.prepared {
-  margin: 0;
-  color: var(--muted);
-  font-size: 14px;
-  font-weight: 600;
-}
-
-.prepared-for {
-  display: flex;
-  align-items: center;
-  gap: 18px;
-}
-
 .district-logo {
   height: 52px;
   width: auto;
-  padding-left: 18px;
-  border-left: 1px solid var(--rule);
 }
 
 @media (max-width: 560px) {
-  .prepared-for {
-    flex-direction: row-reverse;
-    justify-content: flex-end;
-    gap: 14px;
-  }
-
   .district-logo {
     height: 40px;
-    padding-left: 0;
-    padding-right: 14px;
-    border-left: 0;
-    border-right: 1px solid var(--rule);
-  }
-
-  .prepared {
-    font-size: 13px;
   }
 }
 
