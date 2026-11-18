@@ -82,11 +82,18 @@ window.RUBRIC = {
               label: "Luna from scratch",
             },
             {
-              src: "assets/video/parse-pdf.mp4",
-              poster: "assets/video/parse-pdf.jpg",
+              src: "assets/video/parse-pdf-math.mp4",
+              poster: "assets/video/parse-pdf-math.jpg",
               label: "Parse an existing PDF",
-              alt: "A teacher drops a five-page AP Precalculus quiz PDF into Formative; Luna converts it into editable questions that keep their graphs, answer keys and standards tags",
-              caption: "Turning a five-page AP Precalc PDF into editable questions, graphs included (waits sped up)",
+              alt: "A teacher creates a new formative, titles it 8th Grade Math and uploads a 14-page grade 8 math PDF exported from another assessment platform; Luna turns it into 13 editable questions. The video then scrolls through the same questions after review: scatterplots, coordinate graphs, tables and equations, with answer keys, hints and grade 8 standards",
+              caption: "Creating 8th Grade Math and uploading a 14-page PDF (processing sped up for this video), then the same questions after a teacher review and cleanup",
+            },
+            {
+              src: "assets/video/student-pdf-math.mp4",
+              poster: "assets/video/student-pdf-math.jpg",
+              label: "The PDF, as students see it",
+              alt: "A student opens 8th Grade Math and answers questions built from the PDF: a scatterplot, choosing an equation for a graphed line, a two-way table, a relation in set notation, a graph compared with a table, choosing the nonlinear function from tables and sets, and choosing the graph of a system of equations",
+              caption: "What students see: the same math questions, with clean graphs, tables and equations",
             },
             {
               src: "assets/video/item-bank-add.mp4",
@@ -110,12 +117,22 @@ window.RUBRIC = {
         {
           q: "Can we migrate our existing assessments into the platform",
           answer: "Yes. Formative fully supports QTI imports, as long as your current assessment vendor can provide those files. You can also import from Google Forms, or upload a PDF or Word document and Formative turns it into editable questions. If none of those work for you, an assessment specialist will help migrate your current assessments into the platform, so there is less manual work for your team.",
-          media: {
-            src: "assets/video/parse-pdf.mp4",
-            poster: "assets/video/parse-pdf.jpg",
-            alt: "A teacher drops a five-page AP Precalculus quiz PDF into Formative; Luna converts it into editable questions that keep their graphs, answer keys and standards tags",
-            caption: "Turning a five-page AP Precalc PDF into editable questions, graphs included (waits sped up)",
-          },
+          media: [
+            {
+              src: "assets/video/parse-pdf-math.mp4",
+              poster: "assets/video/parse-pdf-math.jpg",
+              label: "Upload a PDF",
+              alt: "A teacher creates a new formative, titles it 8th Grade Math and uploads a 14-page grade 8 math PDF exported from another assessment platform; Luna turns it into 13 editable questions. The video then scrolls through the same questions after review: scatterplots, coordinate graphs, tables and equations, with answer keys, hints and grade 8 standards",
+              caption: "Creating 8th Grade Math and uploading a 14-page PDF (processing sped up for this video), then the same questions after a teacher review and cleanup",
+            },
+            {
+              src: "assets/video/student-pdf-math.mp4",
+              poster: "assets/video/student-pdf-math.jpg",
+              label: "As students see it",
+              alt: "A student opens 8th Grade Math and answers questions built from the PDF: a scatterplot, choosing an equation for a graphed line, a two-way table, a relation in set notation, a graph compared with a table, choosing the nonlinear function from tables and sets, and choosing the graph of a system of equations",
+              caption: "What students see: the same math questions, with clean graphs, tables and equations",
+            },
+          ],
         },
         {
           q: "Do you have pre-built Ohio state test (OAA/OGT/AIR) practice items for grades 3-12?",
