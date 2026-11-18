@@ -217,13 +217,14 @@
       $("#focus-media").replaceChildren(m ? mediaNode(m, true) : "");
       $("#focus-caption").textContent = m?.caption || "";
       focusBody.classList.toggle("is-wide", !!m?.wide);
-      clips.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-pressed", String(j === k)));
+      clips.querySelectorAll("button").forEach((b, j) => b.setAttribute("aria-selected", String(j === k)));
     };
     clips.replaceChildren(
       ...(list.length > 1
         ? list.map((m, k) => {
             const b = el("button", "clip-btn", m.label || `Clip ${k + 1}`);
             b.type = "button";
+            b.setAttribute("role", "tab");
             b.addEventListener("click", () => show(k));
             return b;
           })

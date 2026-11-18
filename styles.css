@@ -518,17 +518,27 @@ a {
   overflow: hidden;
 }
 
-.focus-media {
+.focus-stage {
   display: none;
 }
 
-.has-media .focus-media {
+.has-media .focus-stage {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 12px;
   min-height: 0;
   padding: 24px;
   background: var(--butter);
+}
+
+.focus-media {
+  display: flex;
+  justify-content: center;
+  flex: 0 1 auto;
+  min-height: 0;
+  width: 100%;
 }
 
 .focus-media img,
@@ -588,9 +598,15 @@ a {
 
 .focus-clips {
   display: flex;
+  flex: none;
   flex-wrap: wrap;
-  gap: 8px;
-  margin-top: 24px;
+  justify-content: center;
+  gap: 4px;
+  max-width: 100%;
+  padding: 4px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 22px;
+  background: var(--paper);
 }
 
 .focus-clips:empty {
@@ -598,25 +614,26 @@ a {
 }
 
 .clip-btn {
-  padding: 7px 14px;
-  border: 1px solid var(--rule-strong);
+  flex: none;
+  padding: 7px 16px;
+  border: 0;
   border-radius: 999px;
-  background: var(--paper);
+  background: transparent;
   color: var(--ink);
   font: inherit;
   font-size: 14px;
   font-weight: 600;
+  white-space: nowrap;
   cursor: pointer;
 }
 
 .clip-btn:hover {
-  border-color: var(--blue);
   color: var(--blue-deep);
+  background: var(--butter);
 }
 
-.clip-btn[aria-pressed="true"] {
+.clip-btn[aria-selected="true"] {
   background: var(--blue);
-  border-color: var(--blue);
   color: #fff;
 }
 
@@ -644,7 +661,7 @@ a {
   overflow-y: auto;
 }
 
-.is-wide .focus-media {
+.is-wide .focus-stage {
   padding: 20px 24px;
 }
 
@@ -740,8 +757,21 @@ a {
     overflow-y: auto;
   }
 
-  .has-media .focus-media {
+  .has-media .focus-stage {
+    min-height: auto;
     padding: 12px;
+    gap: 10px;
+  }
+
+  .focus-media {
+    flex: none;
+  }
+
+  .focus-clips {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    scrollbar-width: none;
   }
 
   .focus-media img,
