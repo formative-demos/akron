@@ -473,22 +473,20 @@ a {
   overflow: hidden;
 }
 
-/* Same timing as FullPointsAnimation in the app: hold, then fade out by 2s */
+/* The original full-points Lottie: its circle is ~19% of the frame, so the frame is sized and offset
+   to put a ~56px circle in the corner with room for the confetti */
 .celebrate {
   position: absolute;
-  right: 20px;
-  bottom: 20px;
+  right: -89px;
+  bottom: -89px;
+  width: 290px;
+  height: 290px;
   z-index: 5;
   pointer-events: none;
-  animation: celebrate-fade 2s linear forwards;
 }
 
-.focus .celebrate svg {
-  display: block;
-  width: 72px;
-  height: 72px;
-  fill: none;
-  stroke: none;
+.celebrate.is-playing {
+  animation: celebrate-fade 1.6s linear forwards;
 }
 
 @keyframes celebrate-fade {
@@ -496,21 +494,25 @@ a {
   80% {
     opacity: 1;
   }
-  95%,
   100% {
     opacity: 0;
   }
 }
 
+.focus .celebrate svg {
+  width: 100%;
+  height: 100%;
+  fill: initial;
+  stroke: initial;
+  stroke-width: initial;
+}
+
 @media (max-width: 820px) {
   .celebrate {
-    bottom: calc(72px + env(safe-area-inset-bottom));
-    right: 12px;
-  }
-
-  .focus .celebrate svg {
-    width: 56px;
-    height: 56px;
+    right: -76px;
+    bottom: calc(-16px + env(safe-area-inset-bottom));
+    width: 232px;
+    height: 232px;
   }
 }
 

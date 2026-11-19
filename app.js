@@ -21,27 +21,17 @@
 
   const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
-  // Same markup as Formative's CheckMarkAnimation component
-  const CHECK_SVG = `<svg class="cm-anim cm-play" width="200" height="200" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g>
-<circle class="cm-boom5" transform="matrix(-1 0 0 1 13.5537 10.4465)" cx="1.55" cy="1.55" r="1.55" fill="#34C759"/>
-<circle class="cm-boom4" transform="translate(10.4502 10.45)" cx="1.55" cy="1.55" r="1.55" fill="#34C759"/>
-<circle class="cm-boom3" transform="matrix(-1 0 0 1 13.5498 10.45)" cx="1.55" cy="1.55" r="1.55" fill="#34C759"/>
-<circle class="cm-boom2" transform="translate(10.4502 10.45)" cx="1.55" cy="1.55" r="1.55" fill="#34C759"/>
-<circle class="cm-boom1" transform="matrix(-1 0 0 1 13.5498 10.45)" cx="1.55" cy="1.55" r="1.55" fill="#34C759"/>
-<path class="cm-circle" transform="translate(2 2)" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#34C759"/>
-<path class="cm-checkmark" transform="translate(5.69922 7.27173)" d="M0.000123747 4.03711L4.30559 8.30779L12.6132 0" pathLength="1" stroke="white" stroke-width="2" stroke-dasharray="1 1"/>
-<circle class="cm-splash2" transform="translate(6.75781 12.3578)" cx="4.22168" cy="4.22168" r="4.22168" stroke="white"/>
-<circle class="cm-splash1" transform="translate(14.0908 3.05005)" cx="4.22168" cy="4.22168" r="4.22168" stroke="#34C759"/>
-<g transform="translate(2 2)"><mask id="__MASK__" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="0" y="0" width="24" height="24">
-<path class="cm-circle_mask" d="M10 0C4.48 0 0 4.48 0 10C0 15.52 4.48 20 10 20C15.52 20 20 15.52 20 10C20 4.48 15.52 0 10 0Z" fill="#34C759"/></mask>
-<g mask="url(#__MASK__)">
-<circle class="cm-boom5_mask" transform="matrix(-1 0 0 1 11.5537 8.44653)" cx="1.55" cy="1.55" r="1.55" fill="white"/>
-<circle class="cm-boom4_mask" transform="translate(8.4502 8.45001)" cx="1.55" cy="1.55" r="1.55" fill="white"/>
-<circle class="cm-boom3_mask" transform="matrix(-1 0 0 1 11.5498 8.45001)" cx="1.55" cy="1.55" r="1.55" fill="white"/>
-<circle class="cm-boom2_mask" transform="translate(8.4502 8.45001)" cx="1.55" cy="1.55" r="1.55" fill="white"/>
-<circle class="cm-boom1_mask" transform="matrix(-1 0 0 1 11.5498 8.45001)" cx="1.55" cy="1.55" r="1.55" fill="white"/>
-<circle class="cm-splash1_mask" transform="translate(12.0908 1.05005)" cx="4.22168" cy="4.22168" r="4.22168" stroke="white"/>
-</g></g></g></svg>`;
+  // Formative's original full-points animation (Lottie, 2023), played with lottie-web
+  const LOTTIE_SRC = "https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.12.2/lottie_light.min.js";
+  let lottieReady;
+  const loadLottie = () =>
+    (lottieReady ||= new Promise((resolve, reject) => {
+      const s = document.createElement("script");
+      s.src = LOTTIE_SRC;
+      s.onload = () => resolve(window.lottie);
+      s.onerror = reject;
+      document.head.append(s);
+    }));
   const videoObserver = new IntersectionObserver(
     (entries) => {
       entries.forEach((e) => {
@@ -317,17 +307,23 @@
     if (!focus.open) focus.showModal();
   }
 
-  // The full-points check students see in Formative, played in the corner on each question
+  // Formative's original full-points check, played in the corner on each question
   function celebrate() {
     if (reducedMotion) return;
     focus.querySelector(".celebrate")?.remove();
     const box = el("div", "celebrate");
     box.setAttribute("aria-hidden", "true");
-    box.innerHTML = CHECK_SVG.replace(/__MASK__/g, `cm-mask-${Date.now()}`);
     box.addEventListener("animationend", (e) => {
       if (e.target === box) box.remove();
     });
     focus.querySelector(".focus-panel").append(box);
+    loadLottie()
+      .then((lottie) => {
+        if (!box.isConnected) return;
+        lottie.loadAnimation({ container: box, renderer: "svg", loop: false, autoplay: true, path: "assets/full-points.json" });
+        box.classList.add("is-playing");
+      })
+      .catch(() => box.remove());
   }
 
   function closeFocus() {
