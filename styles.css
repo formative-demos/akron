@@ -465,11 +465,52 @@ a {
 }
 
 .focus-panel {
+  position: relative;
   display: flex;
   flex-direction: column;
   height: 100%;
   border-radius: inherit;
   overflow: hidden;
+}
+
+/* Same timing as FullPointsAnimation in the app: hold, then fade out by 2s */
+.celebrate {
+  position: absolute;
+  right: 8px;
+  bottom: 8px;
+  z-index: 5;
+  pointer-events: none;
+  animation: celebrate-fade 2s linear forwards;
+}
+
+.focus .celebrate svg {
+  display: block;
+  width: 200px;
+  height: 200px;
+  fill: none;
+  stroke: none;
+}
+
+@keyframes celebrate-fade {
+  0%,
+  80% {
+    opacity: 1;
+  }
+  95%,
+  100% {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 820px) {
+  .celebrate {
+    bottom: calc(76px + env(safe-area-inset-bottom));
+  }
+
+  .focus .celebrate svg {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .focus-top {
