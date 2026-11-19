@@ -31,7 +31,7 @@ window.RUBRIC = {
         },
         {
           q: "Are there any additional charges for full implementation (onboarding, training, rostering etc)?",
-          answer: "The only additional implementation cost is for Professional Learning. Expert facilitators deliver engaging, hands-on learning experiences that help educators apply platform features and instructional strategies in their classrooms. Sessions can be tailored for teachers, instructional leaders, coaches, and administrators, with options ranging from live virtual workshops to in-person half-day or full-day sessions.\n\nProfessional Learning costs:\n• In-person session (full day): $4,200\n• Virtual live session (90 minutes): $750\n\nWe also offer Early Implementation, which provides 90 days of complimentary access so that your teams can begin working, setting up assessments and familiarizing themselves with the platform.",
+          answer: "Everything required for Formative go-live is included in the price. Rostering, onboarding, integrations, migrations, and other requirements for functionality are baked in.\n\nThe only additional implementation cost is for Professional Learning. Expert facilitators deliver engaging, hands-on learning experiences that help educators apply platform features and instructional strategies in their classrooms. Sessions can be tailored for teachers, instructional leaders, coaches, and administrators, with options ranging from live virtual workshops to in-person half-day or full-day sessions.\n\nProfessional Learning costs:\n• In-person session (full day): $4,200\n• Virtual live session (90 minutes): $750\n\nWe also offer Early Implementation, which provides 90 days of complimentary access so that your teams can begin working, setting up assessments and familiarizing themselves with the platform.",
         },
       ],
     },
@@ -438,8 +438,8 @@ window.RUBRIC = {
               caption: "A district assessment’s results grouped by Ohio grade 8 standard, for every school, teacher and student",
             },
             {
-              src: "assets/video/tracker-standards.mp4",
-              poster: "assets/video/tracker-standards.jpg",
+              src: "assets/video/tracker-by-standard.mp4",
+              poster: "assets/video/tracker-by-standard.jpg",
               label: "Team tracker by standard",
               alt: "The Team tracker in Standards view across the Fall, Winter and Spring assessments: each school's score by domain, then each teacher, then one teacher's class",
               caption: "The Team tracker by standard across Fall, Winter and Spring, by school, teacher and class",
@@ -460,8 +460,8 @@ window.RUBRIC = {
           q: "Can building admin see both district and classroom teacher created assessment results?",
           answer: "The district sets the permissions and can allow building administrators to see it if they choose to allow it. Otherwise, building administrators will only see their building data.",
           media: {
-            src: "assets/video/building-admin.mp4",
-            poster: "assets/video/building-admin.jpg",
+            src: "assets/video/building-admin-tracker.mp4",
+            poster: "assets/video/building-admin-tracker.jpg",
             alt: "A building administrator's Team tracker for the Fall, Winter and Spring assessments shows only the teachers in their school, then one teacher's class and students",
             caption: "A building admin sees the teachers in their own building, down to each class and student",
           },
@@ -485,16 +485,15 @@ window.RUBRIC = {
       rows: [
         {
           q: "How long to rollout? What does rollout look like?",
-          answer: "Rollout is led by Akron’s dedicated Customer Success Manager and follows a clear sequence:\n1. Kickoff to confirm goals, timeline and the first common assessments.\n2. Technical setup with Akron IT: Clever rostering, SSO, Schoolytics and Respondus LockDown Browser.\n3. Training for administrators and teachers.\n4. Migration of existing assessments with an assessment specialist.\n5. Regular check-ins through the first year to review usage and data.\nThe exact timeline depends on Akron’s start date, and we will share a week-by-week plan at kickoff.",
-          draft: true,
+          answer: "For a district the size of Akron, a typical implementation is about 60-90 days.\n\nFormative implementation is designed to help educators get started with the platform and build practical routines for using assessment data to inform instruction. The rollout begins with planning and account setup, followed by role-appropriate professional learning and support for classroom adoption. Implementation typically includes:\n• Planning: Align on instructional goals, intended use cases, implementation priorities, and the educators or schools involved.\n• Account setup: Configure classes and account settings to support implementation and accurate data.\n• Professional learning: Provide training tailored to the audience, such as administrators, instructional leaders, coaches, or teachers.\n• Classroom launch: Help educators create and assign a practical assessment or lesson and review student responses.\n• Adoption and instructional use: Support educators in using response data, insights, and reports to identify learning needs and inform next steps.",
         },
         {
           q: "Explain initial PD for tech? For end users?",
-          answer: "Technology staff: a setup session with our implementation team covering Clever rostering, SSO, LMS and LTI connections, the Schoolytics data sync and Respondus LockDown Browser.\nEnd users: Formative Fundamentals training for teachers, plus administrator training on reports, the Tracker and common assessments. Sessions are scheduled from our Professional Learning catalog through a personalized booking link.",
+          answer: "Formative customers receive access to a dedicated Assessment Services & Onboarding Specialist. This specialist focuses on the foundational training and learning required to start using the platform. In collaboration with our professional learning team, they help your district find the most ideal and cost-effective mixture of training materials and sessions to fit your needs.\n\nFormative offers targeted sessions tailored to different experience levels and roles. These modules can be customized or sequenced based on unique needs, such as a particular Formative feature or serving a special population of students. All of our PD sessions are delivered by highly trained former educators.\n\n**Core sessions**\n• Formative Foundations\n• Formative for Instruction/Engaging All Students\n• Establishing Data Routines in Formative\n**Special topics**\n• Differentiating Instruction with Formative\n• Supporting Multilingual Learners with Formative\n• Supporting Student Engagement with Formative\n**For leaders**\n• Maximizing Formative at Your School\n• Overseeing Common Assessments (Train-the-Trainer only)\n\nFor technology, our onboarding specialist can connect your technical experts with ours to establish rostering and migration procedures. This can include API or SFTP synchronization, firewall setup, and technical questions regarding devices and web browsers.",
         },
         {
           q: "What are your training tools/methodology?",
-          answer: "Training is hands-on: teachers build and assign a real assessment during their session so they leave ready to use it with students. Live sessions from our Professional Learning catalog are backed by on-demand Formative Certified courses, live events and webinars, tips by email, and a help center with step-by-step articles that is available 24/7.",
+          answer: "In addition to the professional development sessions outlined above, Formative offers asynchronous courses such as the [Formative Certified Educator course](https://help.formative.com/en/articles/4236291-become-a-certified-educator) that serve to acquaint users with the platform’s features. There is also a [searchable database](https://help.formative.com/en/) of over 100 articles on virtually every Formative function. There is also live chat available in-app Monday-Friday from 8am to 8pm ET.",
         },
         {
           q: "Describe your Help Desk support?",
@@ -563,7 +562,7 @@ window.RUBRIC = {
       rows: [
         {
           q: "How long have you been in business with assessment platforms?",
-          answer: "Formative was founded in 2013 and has supported teachers for more than 10 years. Formative joined Newsela in 2023. Today, teachers in more than 90% of U.S. school districts use Formative, and students have submitted more than 6 billion responses.",
+          answer: "Formative was originally founded in 2013 before acquisition by Newsela in 2023. The product has been assessment-focused for its entire lifetime.",
         },
         {
           q: "Do you have any customers in Ohio? If so who?",
@@ -571,8 +570,7 @@ window.RUBRIC = {
         },
         {
           q: "Can you share your financial stability?",
-          answer: "Formative is part of Newsela, a leading K-12 instructional content company. Newsela raised a $100 million Series D round in 2021 at a valuation of about $1 billion, backed by investors including Franklin Templeton, TCV, Kleiner Perkins and the Chan Zuckerberg Initiative. Newsela continues to invest in Formative, including adding Schoolytics in 2026.",
-          draft: true,
+          answer: "Newsela is happy to share its financial statements upon signature of a non-disclosure agreement. You may also look up our Dun & Bradstreet report by using our number (047392927).",
         },
       ],
     },
