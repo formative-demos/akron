@@ -44,10 +44,10 @@ window.RUBRIC = {
           q: "Visual appeal and intuitiveness of staff facing interface?",
           answer: "Every assessment has the same three tabs, so staff always know where to go: Edit to build, Responses to watch answers arrive live, and Insights to see results by question and standard. Administrators get the same layout plus Admin Tools for reports, the Tracker and team management. The clip shows a teacher moving through all three tabs.",
           media: {
-            src: "assets/video/staff-interface-levels.mp4",
-            poster: "assets/video/staff-interface-levels.jpg",
-            alt: "The Responses grid for a district common assessment, with every school, teacher and class, then the Insights summary showing overall performance and how many students reached each score level, from Extending to Emerging",
-            caption: "Moving between responses and insights for one assessment",
+            src: "assets/video/staff-tour.mp4",
+            poster: "assets/video/staff-tour.jpg",
+            alt: "A teacher moves through the three tabs: Edit, scrolling through math questions with a scatterplot, a graph and a two-way table; Responses, with every school, teacher and class; and Insights, showing overall performance and how many students reached each score level, from Extending to Emerging",
+            caption: "Edit, Responses and Insights: the same three tabs on every assessment",
           },
         },
         {
