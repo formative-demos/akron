@@ -372,6 +372,27 @@ a {
   background: var(--hover);
 }
 
+/* The weight cell spans the whole area, so the hovered row paints its own strip behind it */
+.rubric {
+  isolation: isolate;
+}
+
+.rubric td.cell-a {
+  position: relative;
+}
+
+.rubric tr.row:hover td.cell-a::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 100%;
+  width: 82px;
+  background: var(--hover);
+  z-index: -1;
+  pointer-events: none;
+}
+
 .rubric tr.row:hover .media-frame {
   border-color: var(--blue);
   box-shadow: 0 0 0 3px rgb(10 110 250 / 0.15);
@@ -907,6 +928,10 @@ a {
 
   .rubric td.cell-a {
     padding: 6px 0 16px;
+  }
+
+  .rubric tr.row:hover td.cell-a::before {
+    display: none;
   }
 
   .weights li.is-wide .seg-name {
