@@ -271,6 +271,7 @@
   let current = 0;
 
   function renderFocus(i) {
+    celebrate();
     current = (i + items.length) % items.length;
     const { area, row } = items[current];
     $("#focus-area-name").textContent = area.name;
@@ -313,13 +314,10 @@
 
   function openFocus(i) {
     renderFocus(i);
-    if (!focus.open) {
-      focus.showModal();
-      celebrate();
-    }
+    if (!focus.open) focus.showModal();
   }
 
-  // The full-points check students see in Formative, played once in the corner when focus opens
+  // The full-points check students see in Formative, played in the corner on each question
   function celebrate() {
     if (reducedMotion) return;
     focus.querySelector(".celebrate")?.remove();
