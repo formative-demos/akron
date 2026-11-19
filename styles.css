@@ -921,21 +921,229 @@ a {
   }
 }
 
+.print-media {
+  display: none;
+}
+
+.print-bar {
+  max-width: var(--max);
+  margin-inline: auto;
+  padding: 0 var(--gutter) 48px;
+}
+
+.print-btn {
+  padding: 9px 20px;
+  border: 1px solid var(--rule-strong);
+  border-radius: 999px;
+  background: var(--paper);
+  color: var(--ink);
+  font: inherit;
+  font-size: 15px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.print-btn:hover {
+  border-color: var(--blue);
+  color: var(--blue-deep);
+}
+
+.print-btn:disabled {
+  opacity: 0.6;
+  cursor: progress;
+}
+
+@page {
+  size: portrait;
+  margin: 14mm 13mm 16mm;
+}
+
 @media print {
-  .weights,
-  .draft-banner {
-    display: none;
+  html,
+  body {
+    background: #fff !important;
+    color: #000;
+    font-size: 10pt;
   }
+
+  .weights,
+  .draft-banner,
+  .focus,
+  .print-bar,
+  .media,
+  .rubric thead,
+  .cell-w {
+    display: none !important;
+  }
+
+  .masthead,
+  .intro,
+  .rubric,
+  .footer {
+    max-width: none;
+    margin: 0;
+    padding-inline: 0;
+  }
+
+  .masthead {
+    padding-top: 0;
+  }
+
+  .logo {
+    height: 26px;
+  }
+
+  .district-logo {
+    height: 40px;
+  }
+
+  .intro {
+    padding: 14pt 0 10pt;
+  }
+
+  .intro h1 {
+    font-size: 22pt;
+    max-width: none;
+  }
+
+  .intro p {
+    font-size: 10.5pt;
+    max-width: none;
+  }
+
+  .rubric,
+  .rubric tbody,
+  .rubric tr,
+  .rubric td,
+  .rubric tbody th {
+    display: block;
+    width: auto;
+    border: 0;
+    padding: 0;
+    background: none;
+  }
+
   .sticky {
     position: static;
   }
-  .rubric tr {
+
+  .rubric tbody th.cell-area {
+    padding: 16pt 0 4pt;
+    border-bottom: 1.5pt solid #000;
     break-inside: avoid;
+    break-after: avoid;
   }
-  .media {
-    max-width: 320px;
+
+  .rubric tr.row:first-child td.cell-q {
+    break-before: avoid;
   }
+
+  .rubric tr.row:first-child td.cell-a .answer {
+    break-before: avoid;
+  }
+
+  .area-name {
+    font-size: 15pt;
+  }
+
+  .area-weight-inline {
+    display: inline;
+    margin-left: 8pt;
+    font-size: 10pt;
+    font-weight: 700;
+    color: #555;
+  }
+
+  .rubric tr.row {
+    padding: 9pt 0 6pt;
+    border-bottom: 0.5pt solid #ccc;
+  }
+
+  .rubric td.cell-q {
+    break-after: avoid;
+  }
+
+  .q-btn {
+    padding: 0;
+    font-size: 11.5pt;
+    font-weight: 800;
+    color: #000;
+  }
+
   .q-btn::after {
     display: none;
+  }
+
+  .rubric td.cell-a {
+    padding-top: 4pt;
+  }
+
+  .answer,
+  .cell-a .answer {
+    max-width: none;
+    font-size: 10pt;
+    line-height: 1.45;
+    orphans: 3;
+    widows: 3;
+  }
+
+  .answer a {
+    color: #000;
+  }
+
+  .answer a::after {
+    content: " (" attr(href) ")";
+    font-size: 8pt;
+    color: #555;
+    word-break: break-all;
+  }
+
+  .flag-draft {
+    display: none;
+  }
+
+  .print-media {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 8pt;
+    margin-top: 8pt;
+  }
+
+  .print-fig {
+    margin: 0;
+    break-inside: avoid;
+  }
+
+  .print-fig.is-full {
+    grid-column: 1 / -1;
+  }
+
+  .print-fig img {
+    display: block;
+    width: 100%;
+    height: auto;
+    max-height: 48mm;
+    object-fit: contain;
+    object-position: left top;
+    border: 0.5pt solid #bbb;
+    border-radius: 3pt;
+  }
+
+  .print-fig.is-full img {
+    max-height: 72mm;
+    width: auto;
+    max-width: 100%;
+  }
+
+  .print-fig figcaption {
+    margin-top: 3pt;
+    font-size: 8pt;
+    line-height: 1.3;
+    color: #444;
+  }
+
+  .footer {
+    padding: 18pt 0 0;
+    break-inside: avoid;
   }
 }

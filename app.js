@@ -94,7 +94,7 @@
       }
       td.append(...answerNodes(row));
       const list = mediaList(row);
-      if (list.length) td.append(mediaFigure(list[0], list.length));
+      if (list.length) td.append(mediaFigure(list[0], list.length), printMedia(list));
       tr.append(td);
       tbody.append(tr);
     });
@@ -131,6 +131,49 @@
   logo.src = "assets/formative-logo.svg";
   logo.alt = "Formative by Newsela";
   f.append(logo);
+
+  // Print: every clip becomes a hand-picked still from assets/print/, loaded only when printing
+  const printBar = el("div", "print-bar");
+  const printBtn = el("button", "print-btn", "Print");
+  printBtn.type = "button";
+  printBtn.addEventListener("click", async () => {
+    printBtn.disabled = true;
+    await loadPrintStills();
+    printBtn.disabled = false;
+    window.print();
+  });
+  printBar.append(printBtn);
+  f.after(printBar);
+  window.addEventListener("beforeprint", loadPrintStills);
+
+  function printMedia(list) {
+    const box = el("div", "print-media");
+    list.forEach((m) => {
+      const fig = el("figure", "print-fig");
+      if (m.wide || list.length === 1) fig.classList.add("is-full");
+      const img = el("img");
+      img.alt = m.alt || "";
+      img.loading = "lazy";
+      img.src = /\.(mp4|webm)$/i.test(m.src) ? `assets/print/${m.src.split("/").pop().replace(/\.\w+$/, "")}.jpg` : m.src;
+      fig.append(img, el("figcaption", null, m.caption || m.label || ""));
+      box.append(fig);
+    });
+    return box;
+  }
+
+  function loadPrintStills() {
+    const srcs = [...new Set([...document.querySelectorAll(".print-fig img")].map((img) => img.src))];
+    return Promise.all(
+      srcs.map(
+        (src) =>
+          new Promise((r) => {
+            const pre = new Image();
+            pre.onload = pre.onerror = r;
+            pre.src = src;
+          }),
+      ),
+    );
+  }
 
   function answerNodes(row) {
     if (!row.answer) return [el("p", "flag flag-missing", "Needs an answer before this goes to the district")];
